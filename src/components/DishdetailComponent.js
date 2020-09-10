@@ -76,10 +76,10 @@ return (
     <div className="container">
         <div className="row">
           <div  className="col-12 col-md-5 m-1">
-            {this.RenderDish(this.props.selectedDish)}
+            {this.RenderDish(this.props.dish)}
           </div>
           <div  className="col-12 col-md-5 m-1">
-              {this.RenderComments(this.props.selectedDish)}
+              {this.RenderComments(this.props.dish)}
           </div>
         </div>
     </div>
