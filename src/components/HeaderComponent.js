@@ -39,7 +39,7 @@ return(
     <NavLink className="nav-link" to="/home"><span className="fa fa-home fa-lg">Home</span></NavLink>
 </NavItem>
 <NavItem>
-    <NavLink className="nav-link" to="/aboutus"><span className="fa fa-info fa-lg">Aboutus</span></NavLink>
+    <NavLink className="nav-link" to="/about"><span className="fa fa-info fa-lg">Aboutus</span></NavLink>
 </NavItem>
 <NavItem>
     <NavLink className="nav-link" to="/menu"><span className="fa fa-list fa-lg">Menu</span></NavLink>
