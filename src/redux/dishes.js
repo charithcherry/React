@@ -1,4 +1,3 @@
-import { act } from 'react-dom/test-utils';
 import { DISHES } from '../shared/dishes';
 
 export const Dishes=(state =DISHES,action)=>{
