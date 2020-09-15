@@ -3,6 +3,8 @@ import { Card, CardTitle,Button, CardBody,Modal,ModalBody,ModalHeader,Label,Col,
 import {Link} from 'react-router-dom';
 import {Control,LocalForm,Errors} from 'react-redux-form';
 import  {Loading} from './LoadingComponent';
+import { baseUrl } from '../shared/baseUrl';
+
     
 function RenderDish({dish}) 
 {
@@ -12,7 +14,7 @@ function RenderDish({dish})
         <div key={dish.id} >
             <Card>
                 
-            <CardImg width="100%" src={dish.image} alt={dish.name}></CardImg>
+            <CardImg top src={baseUrl + dish.image} alt={dish.name} />
                 <CardTitle>
 
                    <h3>{dish.name}</h3>
@@ -34,7 +36,7 @@ function RenderDish({dish})
     }
 }
 
-function RenderComments({comments,addComment,dishId})
+function RenderComments({comments,postComment,dishId})
 {
     if(comments==null)
     {
@@ -66,7 +68,7 @@ function RenderComments({comments,addComment,dishId})
                 <CardTitle><h4>&nbsp;Comments</h4></CardTitle>
     <CardBody>{l}</CardBody>
 
-        <CommentForm dishId={dishId} addComment={addComment}> 
+        <CommentForm dishId={dishId} postComment={postComment}> 
         </CommentForm>    
             </Card>
             
@@ -112,7 +114,7 @@ return (
           </div>
           <div  className="col-12 col-md-5 m-1">
           <RenderComments comments={props.comments}
-          addComment={props.addComment}
+          postComment={props.postComment}
           dishId={props.dish.id}
           />
           </div>
@@ -151,7 +153,7 @@ class CommentForm extends Component {
     handleSubmit(values) {
 
         this.toggleModal();
-        this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
+        this.props.postComment(this.props.dishId, values.rating, values.author, values.comment);
 
                
     }
